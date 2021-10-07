@@ -1,10 +1,26 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="app">
+    <!-- <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> -->
+    <!-- <div class="container">
+      <AddTodo />
+      <Todos />
+    </div> -->
   </div>
   <router-view/>
 </template>
+
+<script>
+// import Todos from './components/Todos.vue';
+// import AddTodo from './components/AddTodo.vue';
+
+export default {
+  name: 'app',
+  // components: {
+  //   Todos, AddTodo
+  // }
+}
+</script>
 
 <style lang="scss">
 #app {
