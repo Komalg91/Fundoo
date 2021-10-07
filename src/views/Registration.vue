@@ -1,7 +1,15 @@
 <template>
   <div class="register_container">
       <div class="rows">
-          <span class="letter1">F</span>
+          <div class="row_heading">
+            <span class="letter1">F</span>
+            <span class="letter2">u</span>
+            <span class="letter3">n</span>
+            <span class="letter1">d</span>
+            <span class="letter4">o</span>
+            <span class="letter2">o</span>
+            <h2>Create an account</h2>
+          </div>
         <div class="row_content_left">
             <div class="row1 row2">
                 <div class="row_item">
@@ -52,7 +60,7 @@
                 <p class="comments_p">Use 8 or more characters with a mix of letters, numbers & symbols</p>
 
             <div class="row_bottom">
-                <router-link to="/foo" :class="router_link">Sign in instead</router-link>
+                <router-link to="/login"><span>Sign in instead</span></router-link>
                 <input @submit="validate" type="submit" value="Submit" class="submit_button">
 
             </div>
@@ -89,104 +97,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.rows{
-    padding: 0;
-    min-width: 40vw;
-    width: 40%;
-    margin: 0 auto;
-    border: 1px solid #dadce0;
-    padding: 3%;
-    text-align: left;
-    border-radius: 2%;
-    margin-top: 20vh;
-    // display: flex;
-}
-.row_content_left{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin: 0 auto;
-    
-}
-.rows .comments_p{
-    margin-top: 0%;
-    font-size: 0.7rem;
-}
-.row_item{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.row1{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0% 10%;
-    margin-bottom: 4vh;
-    width: 100%;
-}
-.row3{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0% 10%;
-    margin-bottom: 4vh;
-    width: 100%;
-}
-// .row2{
-
-// }
-.row_item .inputfield{
-    margin-top: 2vh;
-    border: 1px solid #dadce0;
-    font-size: 1rem;
-    padding: 0.3rem;
-    width: 100%;
-
-}
-
-input[type="submit"] {
-    // flex: 2;
-    padding: 10px 20px;
-    border: 1px solid #1a73e8;
-    border-radius: 5px;
-    color: #FFFFFF;
-    cursor: pointer;
-    background-color:#1a73e8;
-}
-.error{
-    margin-top:1vh;
-    color: red;
-    font-size: 0.8em;
-}
-svg{
-    color: red;
-}
-input[type=text]{
-    border: 2px solid red;
-    border-radius: 4px;
-}
-input[type=text]:focus{
-    border-width: thick;
-    border: 0px solid rgb(26, 115, 232) !important;
-    outline-color: rgb(26, 115, 232);
-}
-.comments_p{
-    display: none;
-}
-.row_bottom{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.router_link{
-    color: #1a73e8; 
-}
-a{
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-@media screen and (max-width:700px){
-    .row1{
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
+@import './style.scss'
 </style>
