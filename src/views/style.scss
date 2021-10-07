@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .rows{
     padding: 0;
     min-width: 40vw;
@@ -28,7 +29,7 @@
 .row_heading span{
     font-size: 1.3rem;
     font-weight: 700;
-    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .letter1{
     color: rgb(66, 133, 244);
@@ -104,7 +105,7 @@ input[type=text]:focus{
     outline-color: rgb(26, 115, 232);
 }
 .comments_p{
-    display: none;
+    display: none; //
 }
 .row_bottom{
     display: flex;

@@ -2,8 +2,8 @@
   <div class="register_container">
         <div class="rows">
           <div class="row_heading  text_sign">
-            <span class="letter1">F</span>
-            <span class="letter2">u</span>
+            <span class="letter1">G</span>
+            <span class="letter2">o</span>
             <span class="letter3">n</span>
             <span class="letter1">d</span>
             <span class="letter4">o</span>
