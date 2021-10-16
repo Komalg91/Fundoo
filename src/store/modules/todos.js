@@ -13,7 +13,7 @@ const actions = {
         const response = await axios.get('https://jsonplaceholder.typicode.com/todos')
         commit('setTodos', response.data);
     },
-    async addTodo( {commit }, title){
+    async addTodo( { commit }, title){
         const response = await axios.post('https://jsonplaceholder.typicode.com/todos', {
             title, completed: false
         });
@@ -23,9 +23,6 @@ const actions = {
         await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`);
         commit('deleteTodos', id);
     }
-
-    
-
 }
 
 const mutations = {
