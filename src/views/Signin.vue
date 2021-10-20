@@ -96,23 +96,28 @@ export default {
                   password: this.state.password
               }
 
-              let loginuser = localStorage.getItem('Login');
-                console.log(loginuser);
-                if(loginuser!=null){
-                    this.$router.push('/dashboard');
-                }
-                else{
-                    this.router.push('./register');
-                }
-
+            //   let loginuser = localStorage.getItem('Login');
+            //     console.log(loginuser);
+            //     if(loginuser!=null){
+            //         this.$router.push('/dashboard');
+            //     }
+            //     else{
+            //         this.router.push('./register');
+            //     }
+          
               axios.post('http://localhost:3000/persons/loginPersons', fundooperson).then((resp) => {
+                  let logindata={}
+                  var loginData = JSON.parse(localStorage.getItem("Login"));
+                  console.log("login Success");
+                  console.log("login", resp.data.token);
+                    logindata._TKN = resp.data.token
+                    loginData =[logindata]
+                  localStorage.setItem("Login", JSON.stringify(loginData))
+
                   
-                  console.log("Success");
-                  console.log(resp.data.token);
-                  localStorage.setItem("Login", JSON.stringify(resp.data))
 
                 
-                  }).catch(() => console.log("Error"));
+                  }).catch(() => console.log(" login Error"));
             // this.$router.push('/loginPersons');
 
         //   console.log(this.v$);
@@ -121,6 +126,7 @@ export default {
           else{
               alert("Form failed");
           }
+        
           
       }
   }

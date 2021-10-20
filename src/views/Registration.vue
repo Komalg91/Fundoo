@@ -178,8 +178,11 @@ export default {
                   email: this.state.email,
                   password: this.state.password
               }
-              axios.post('http://localhost:3000/persons/registerPersons', fundooperson).then(() => console.log("Success")).catch(() => console.log("Error"));
-            // this.$router.push('/register');
+              axios.post('http://localhost:3000/persons/registerPersons', fundooperson).then(() => {
+                console.log("Success");
+                this.$router.push('/login');
+              }).catch(() => console.log("Error"));
+            // 
 
         //   console.log(this.v$);
           alert("Forrm submitted");

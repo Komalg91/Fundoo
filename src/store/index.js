@@ -1,5 +1,6 @@
 import { createStore } from 'vuex';
 import todos from './modules/todos.js';
+import notes from './modules/notes.js';
 
 export default createStore({
   state: {
@@ -9,6 +10,7 @@ export default createStore({
   actions: {
   },
   modules: {
-    todos
+    todos,
+    notes
   }
 })

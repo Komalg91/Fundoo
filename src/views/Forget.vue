@@ -27,10 +27,11 @@
 
                 </div>
                 <div class="row_bottom">
-                  <button @click="submitForm" class="submit_button">Submit</button>
+                  <button @click="submitForm" class="submit_button" ref="text">Submit</button>
                 </div>
             </div>
         </div>
+        <div v-if="flash" v-text="flash"></div>
     </div>
 </template>
 
@@ -43,7 +44,13 @@ import { required, email, helpers} from '@vuelidate/validators';
 import {reactive, computed} from 'vue';
 
 export default {
+
   name: 'ForgetPassword',
+  data() {
+    return {
+      flash: ''
+    }
+  },
   setup(){
       const state = reactive({
             email: '',
@@ -72,11 +79,13 @@ export default {
                   email: this.state.email              }
               axios.patch('http://localhost:3000/persons/forgetpassword', fundooperson).then(() => {
                 // this.$router.push('/resetpassword/:token');
-                console.log("Success")
+                console.log("Success");
+                this.$refs.text.select();
+                this.flash = 'Email sent';
               }).catch(() => console.log("Error"));
             
 
-        //   console.log(this.v$);
+        //console.log(this.v$);
           alert("Forrm submitted");
           }
           else{

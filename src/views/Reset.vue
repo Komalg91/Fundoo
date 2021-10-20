@@ -101,16 +101,18 @@ export default {
           if(!this.v$.$error){ 
               
               let fundooperson = {
-                  password: this.state.password
+                  "password": this.state.password
               }
               const headers = {
                   'x-auth-token': this.$route.params.token
               }
               console.log(headers);
-              axios.patch('http://localhost:3000/persons/resetpassword', fundooperson, {headers}).then(() => 
+              console.log(fundooperson);
+              axios.patch(`http://localhost:3000/persons/resetpassword/${this.$route.params.token}`, fundooperson, {headers}).then(() => 
               {
                   console.log(this.$route.params.token);
                   console.log("Success")
+                  this.$router.push('/login');
             }).catch(() => console.log("Error"));
             
 
