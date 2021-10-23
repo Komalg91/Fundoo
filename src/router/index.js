@@ -67,7 +67,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Dashboard.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Dashboard/Dashboard.vue')
   },{
     path: '/takenote',
     name: 'Takenote',
@@ -77,12 +77,20 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Takenote.vue')
   },
   {
-    path: '/dash',
-    name: 'Dash',
+    path: '/navheader',
+    name: 'Navheader',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Dash.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/Navheader/Navheader.vue')
+  },
+  {
+    path: '/sidebar',
+    name: 'Sidebar',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../components/Sidebar/Sidebar.vue')
   },
   {
     path: '/persons/resetpassword/:token',
@@ -91,6 +99,22 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Reset.vue')
+  },
+  {
+    path: '/displayarch',
+    name: 'Displayarchive',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Displayarchive/Displayarchive.vue')
+  },
+  {
+    path: '/displaydel',
+    name: 'Displaydel',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Displaydel/Displaydel.vue')
   }
 ]
 

@@ -1,14 +1,12 @@
 <template>
     <!-- <div v-for="note in allNotes" :key="note._id"></div> -->
-    <div class="bg_circle">
-        <router-link to="/displaynotes">
-            <div class="sidebar_item"> 
-                <div class="sidebar_icon ">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/></svg>
-                </div>
-                <span class="bg_text">Notes</span>
+    <div class="bg_circle" @click="route_display">
+        <div class="sidebar_item"> 
+            <div class="sidebar_icon ">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/></svg>
             </div>
-        </router-link>
+            <span class="bg_text">Notes</span>
+        </div>
     </div>
     <div class="bg_circle">
         <div class="sidebar_item">
@@ -28,7 +26,8 @@
             <span class="bg_text">Edit labels</span>
         </div>
     </div>
-    <div class="bg_circle" @click="getarchivenote()">
+    
+    <div class="bg_circle" @click="route_archive">
         <div class="sidebar_item">
             <div class="sidebar_icon">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/>
@@ -37,7 +36,9 @@
             <span class="bg_text">Archive</span>               
         </div>
     </div>
-    <div class="bg_circle">
+    
+    
+    <div class="bg_circle" @click="route_trash">
         <div class="sidebar_item">
             <div class="sidebar_icon">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
@@ -48,10 +49,13 @@
     </div>
 </template>
 
-<script>
 
+<script type="modules" src='./Sidebar.js'>
+export default {
+    
+}
 </script>
 
-<style lang="scss" scoped>
-@import './stylekeep.scss'
+<style lang="scss">
+@import './Sidebar.scss';
 </style>

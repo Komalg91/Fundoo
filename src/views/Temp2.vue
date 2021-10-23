@@ -89,6 +89,32 @@
       </div>
     </div>
   </div>
+
+  <div id="vue">
+	<ul id="list">
+		<li><span v-on:click="modal_1=!modal_1">modal_1</span></li>
+    <li><span v-on:click="modal_2=!modal_2">modal_2</span></li>
+    <li><span v-on:click="modal_3=!modal_3">modal_3</span></li>
+	</ul>
+	<div>
+		<div class="c-modal" v-show="modal_1">
+      <span>modal_1</span>
+    </div>
+    <div class="bg" v-show="modal_1" v-on:click="modal_1=!modal_1"></div>
+	</div>
+  <div>
+		<div class="c-modal" v-show="modal_2">
+      <span>modal_2</span>
+    </div>
+    <div class="bg" v-show="modal_2" v-on:click="modal_2=!modal_2"></div>
+	</div>
+  <div>
+		<div class="c-modal" v-show="modal_3">
+      <span>modal_3</span>
+    </div>
+    <div class="bg" v-show="modal_3" v-on:click="modal_3=!modal_3"></div>
+	</div>
+</div>
 </template>
 
 <script>
@@ -100,7 +126,13 @@ import { required, email, minLength, helpers } from '@vuelidate/validators';
 import {reactive, computed} from 'vue';
 export default {
   name: 'Registration',
-  
+  data(){
+    return{
+      modal_1: false,
+          modal_2: false,
+          modal_3: false
+    }
+  },
   setup(){
       const state = reactive({
           firstName: '',
@@ -195,6 +227,40 @@ body{
 }
 *{
   box-sizing: border-box;
+}
+.c-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+	margin: auto;
+	width: 50%;
+	height: 50%;
+  padding: 12px;
+  border: 1px solid red;
+  border-radius: 5px;
+  background-color: rgba(#fff, .4);
+	z-index: 10001;
+	opacity: 1;
+  transition: .6s;
+}
+
+.bg {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.6);
+  z-index: 10000;
+  opacity: 1;
+  transition: .3s;
+}
+
+#list li {
+  cursor: pointer;
 }
 .register_container{
   margin: 0;

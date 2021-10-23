@@ -8,7 +8,17 @@
                 </div>
 
                 <div class="take_note">
-                    <input type="text" class="note_class" name="" id="" @focus="toggle_note" placeholder="Take a note..." v-model="description">
+                    <div class="take_note_text_item">
+                        <input type="text" class="note_class" name="" id="" @focus="toggle_note" placeholder="Take a note..." v-model="description">
+                        <div class="takenote_text_btn">
+                            <button class="brush_btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/></svg>
+                            </button>
+                            <button class="image_btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7 16c.55 0 1 .45 1 1 0 1.1-.9 2-2 2-.17 0-.33-.02-.5-.05.31-.55.5-1.21.5-1.95 0-.55.45-1 1-1M18.67 3c-.26 0-.51.1-.71.29L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.02 0-1.41l-1.34-1.34c-.2-.2-.45-.29-.7-.29zM7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3z"/></svg>
+                            </button>
+                        </div>
+                    </div>
                     <!-- <span class="take_note_text">Take a note...</span> -->
                 </div>  
 
@@ -60,203 +70,14 @@
             </div>
         </div>
     </div>
-    <div class="display_container">
-        <div class="add_notes">
-            <p> {{notes_add.title}} </p>
-            <p> {{notes_add.description}} </p>
-        </div>
-    </div>
+
 </template>
 
-<script>
-import { mapActions } from 'vuex';
 
-export default {
-    name:'Takenote',
-    data() {
-        return {
-            notes_add: {
-                title: '',
-                description: ''
-            }
-        }
-    },
-    methods: {
-        ...mapActions(["add_notes"]),
-        toggle_note(){
-            document.querySelector('.title_class').style.display = "unset";
-            document.querySelector('.toggle_btn').style.display = "flex";
-        },
-        toggle_none(){
-            
-            document.querySelector('.title_class').style.display = "none";
-            document.querySelector('.toggle_btn').style.display = "none";
-            let notes_add = {
-                title: this.title,
-                description: this.description
-            }
-
-            this.add_notes(notes_add);
-
-            
-
-            // const token1 = JSON.parse(localStorage.getItem('Login')).token;
-            // console.log("add notes", token1);
-            // const headers = {
-            //       'x-auth-token': token1
-            //   }
-            //   console.log("add notes", headers);
-            //   console.log('add notes', notes_add);
-            // if((this.title !== null) || (this.description !== null)){
-            //     axios.post('http://localhost:3000/persons/notes/addnotes', notes_add, {headers}).then(() => console.log("add notes Success")).catch(() => console.log("add notes Error"));
-            // }
-        }
-    }
-
-}
+<script type="module" src="./Takenote.js">
 </script>
 
-<style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-body{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-}
-*{
-    box-sizing: border-box;
-}
-.container{
-    margin: 0 auto;
-    padding: 0;
-    width: 60%;
-    // background-color: burlywood;
-}
-.take_note_container{
-    min-height: 20vh;
-    // min-width: 600px;
-    width: 100%;
-    position: relative;
-
-}
-.take_note_content{
-    min-height: 10vh;
-    width: 100%;
-    position: absolute;
-    // padding: 4px 16px 12px 16px;
-    // border: 1px solid #000;
-    border-radius: 10px;
-    box-shadow: 1px 2px 2px 0px rgb(65 69 73 / 10%), 1px 3px 3px 1px rgb(65 69 73 / 15%) ;
-}
-// .take_note_text{
-//     letter-spacing: .01428571em;
-//     font-family: 'Roboto', sans-serif;
-//     font-size: .875rem;
-//     font-weight: 400;
-//     line-height: 1.25rem;   
-// }
-
-input[type=text]{
-    width: 100%;
-    line-height: 2;
-    border: none;
-    outline: none;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-.take_note ::placeholder{
-    font-family: 'Roboto', sans-serif;    
-    font-size: 0.8rem;
-    font-weight: 550;
-    line-height: 3;
-    color: #202124;
-}
-
-.take_title, .take_note{
-    padding: 4px 16px 12px 16px;
-}
-.toggle_btn{
-    padding: 4px 16px 12px 0px;
-}
-// .toggle_btn button:hover{
-
-// }
-
-
-.take_title ::placeholder{
-    color: rgba(0,0,0,0.6);
-    font-family: 'Roboto', sans-serif;    
-    font-size: 1rem;
-    font-weight: 550;
-}
-
-.take_title input[type=text]{
-    display: none;
-}
-
-.take_note input[type=text]:focus + .take_title input[type=text]{
-        display: unset;
-}
-.toggle_btn{
-    display: none;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.toggle_btn button{
-    background-color: transparent;
-    outline: none;
-    border: none;
-    
-}
-.toggle_item{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-.toggle_item button{
-    width: 40px;
-    height: 40px;
-    margin: 0 8px;
-}
-@media screen and (max-width:930px) {
-    .toggle_item button{
-        margin: 0 3px;
-    }
-}
-
-@media screen and (max-width:700px) {
-    .container{
-        width: 80%;
-    }
-    .toggle_item button{
-        width: 30px;
-        height: 30px;
-    }
-}
-@media screen and (max-width:600px) {
-    .toggle_btn{
-        flex-direction: column;
-        // align-items: flex-end;
-    }
-    .toggle_item2{
-        align-self: flex-end;
-        padding: 8px 24px;
-    }
-}
-@media screen and (max-width:400px) {
-    .container{
-        width: 80%;
-    }
-    .take_note_container{
-        margin: 5% auto auto 30%;
-    }
-    .toggle_item button{
-        width: 32px;
-    }
-}
+<style lang="scss" scoped>
+@import './Takenote.scss';
 </style>
+

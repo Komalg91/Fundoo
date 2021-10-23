@@ -1,130 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 body{
-    margin: 0;
+    margin: 0px;
     padding: 0;
     width: 100%;
     overflow-x: hidden;
-
 }
 *{
     box-sizing: border-box;
 }
 
-.maincontainer{
-    display: flex;
-    flex-direction: row;
-    top: 5rem;
+html{
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
 }
-
-.bg_circle:first-child{
-    .sidebar_icon{
-        background-color: #feefc3;
-    }
-}
-.bg_circle:first-child:hover{
-        background-color: #feefc3;
-        width: 280px;
-        height: 48px;
-        border-top-right-radius: 25px;
-        border-bottom-right-radius: 25px;
-}
-.side_nav_header{
-    margin: 0;
-   
-}
-.sidebar{
-    // display: flex;
-    width: auto;
-}
-.sidebar_icon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    height: 48px;
-    width: 48px;
-    border-radius: 50%;
-    // background-color: turquoise;
-    // margin-top: 15%;
-}
-.sidebar_row{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    z-index: 10;
-    // justify-content: space-evenly;
-    // width: 280px;
-    // min-height: auto;
-    height: calc(100% - 64px);
-    position: fixed;
-    top: 64px;
-}
-.sidebar_row_left{
-    flex: 1 0 auto;
-    color: #202124;
-    font-weight: 600;
-    font-family: 'Open Sans', sans-serif;
-}
-.sidebar_row_right{
-    margin-bottom: 1rem;
-    padding: 0 3rem;
-}
-.sidebar_item{
-    display: flex;
-    align-items: center;
-    padding: 0 1rem;
-
-    // justify-content: center;
-}
-
-.bg_text{
-    display: none;
-    margin-left: 1rem;
-    font-size: 0.9rem;
-}
-.sidebar_row{
-    width: 80px;
-}
-.sidebar_row_right span{
-    display: none;
-}
-.bg_circle:hover{
-    background-color: #f1f3f4;
-    width: 280px;
-    height: 48px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-
-    .bg_text{
-        display: unset;
-    }
-
-    
-}
-.row_right_text{
-    font-size: 0.8rem;
-    color: #5f6368;
-}
-.sidebar_row:hover{
-    width: 280px;
-    background-color: #FFFFFF;
-    box-shadow: 0 16px 10px 0 rgb(0 0 0 / 14%), 0 11px 18px 0 rgb(0 0 0 / 12%), 0 13px 5px -1px rgb(0 0 0 / 20%);;
-
-    .sidebar_row_right span{
-        display: unset;
-    }
-}
-
-
 
 //top navbar
 .nav_header{
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF;
-    box-shadow: inset 0 -1px 0 0 #dadce0;
+    background-color: #FFFFFF; 
     height: 64px;
+    box-shadow: inset 0 -1px 0 0 #dadce0;   
+    display: flex;
+    align-items: center;
 }
 
 .navbar{
@@ -134,12 +34,15 @@ body{
     justify-content: space-between;
     flex: 1 0 auto;
     width: 100%;
-    padding-right: 1%;
     margin: 0 auto;
+    padding: 8px;
     color: #5f6368;
     position: fixed;
     z-index: 100;
     background-color: #FFFFFF;
+    box-shadow: inset 0 -1px 0 0 #dadce0;   
+
+    
 }
 .keep_text{
     font-weight: 100;
@@ -179,7 +82,7 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    // justify-content: flex-start;
     flex: 1 1 100%;
 }
 .section3_item1{
@@ -211,7 +114,6 @@ form{
  display: flex;
  align-items: center;
  padding: 8px;
-
 }
 .search_btn{
     float: left;
@@ -221,11 +123,9 @@ form{
 .search_box{
  margin: 0 48px;
  width: 100%;
-// background-color: seagreen;
 }
 input[type=search]{
     background-color: #f1f3f4;
-    // border: 1px solid transparent;
     width: 100%;
     border: none;
     font-size: 1rem;
@@ -234,22 +134,20 @@ input[type=search]{
 .section4{
     margin-left: 5%;
 }
+
+.section4{
+    width: 48px;
+}
 input[type=search]:focus{
     border: none;
     outline: none;
-    background-color: #FFFFFF;
-
-    
+    background-color: #FFFFFF;    
 }
 .search:focus-within{
-        background-color: #FFFFFF;
-        box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
-    }
-
-button:hover{
-    background-color: rgba(95,99,104,0.157);
-    border-radius: 50%;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
 }
+
 
 @media screen and (max-width: 600px) {
     .search_box{
@@ -259,7 +157,7 @@ button:hover{
         background-color: transparent;
     }
 
-    svg{
+    .nav_header svg{
         height: 18px;
         width: 18px;
     }
@@ -290,3 +188,4 @@ button:hover{
     }
 
 }
+

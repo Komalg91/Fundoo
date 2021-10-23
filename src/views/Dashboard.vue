@@ -65,13 +65,18 @@ export default {
     box-shadow: 1px 2px 2px 0px rgb(65 69 73 / 10%), 1px 3px 3px 1px rgb(65 69 73 / 15%) ;
     padding: 12px;
     border-radius: 5px;
-    margin-top: 15%;
+    margin-top: -100%;
     margin-left: -70px;
     width: 100px;
     background-color: #FFFFFF;
     z-index: 10;
 }
 .more_btn:hover{
+    .dropmenu{
+        display: flex;
+    }
+}
+.color_btn:hover{
     .dropmenu{
         display: flex;
     }

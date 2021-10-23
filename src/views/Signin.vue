@@ -23,7 +23,7 @@
                     <p>{{v$.email.$errors[0].$message }} </p>
                     </div>
                     <div class="error_msg"></div>
-                    <span class="use_email">Forgot email ?</span>
+                    <router-link to="/forgetpassword"><span class="use_email">Forgot password ?</span></router-link>
 
                 </div>
 
@@ -44,7 +44,7 @@
 
                 </div>  
                 <div class="row_bottom">
-                    <router-link to="/dashboard"><button @click="submitForm" class="submit_button">Next</button></router-link>
+                    <button @click="submitForm" class="submit_button">Next</button>
                     <router-link to="/register"><span>Create account</span></router-link>
 
                     <!-- <input @submit="validate" type="submit" value="Submit" class="submit_button"> -->
@@ -104,7 +104,9 @@ export default {
             //     else{
             //         this.router.push('./register');
             //     }
-          
+
+
+
               axios.post('http://localhost:3000/persons/loginPersons', fundooperson).then((resp) => {
                   let logindata={}
                   var loginData = JSON.parse(localStorage.getItem("Login"));
@@ -112,8 +114,8 @@ export default {
                   console.log("login", resp.data.token);
                     logindata._TKN = resp.data.token
                     loginData =[logindata]
-                  localStorage.setItem("Login", JSON.stringify(loginData))
-
+                  localStorage.setItem("Login", JSON.stringify(loginData));
+                     this.$router.push('/dashboard');
                   
 
                 
@@ -121,7 +123,7 @@ export default {
             // this.$router.push('/loginPersons');
 
         //   console.log(this.v$);
-          alert("Forrm submitted");
+        //   alert("Forrm submitted");
           }
           else{
               alert("Form failed");

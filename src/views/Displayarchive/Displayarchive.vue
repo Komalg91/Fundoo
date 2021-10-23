@@ -1,13 +1,36 @@
-<template>
-    <div class="display_container">
+<template><div class="notes_container">
+    
+    <Navheader />
+    <div class="maincontainer">
+        <div class="main_left">
+            <div class="side_nav_header">
+                <div class="sidebar">
+                    <div class="sidebar_row">
+                        <div class="sidebar_row_left">
+
+                            <Sidebar />
+                            
+                        </div>
+                        <div class="sidebar_row_right">
+                            <span class="row_right_text"> Open-source licences</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_right">
+            
+   <div class="display_container">
         <div class="display_notes_content">
-            <div class="display_notes" v-for="note in allNotes.slice().reverse()" :key="note._id">
+            <div class="display_notes" v-for="note in getarchiveNotes.slice().reverse()" :key="note._id">               
                 <div class="display_title">
                     <p> {{note.title}} </p>
                 </div>
                 <div class="display_description">
                     <p> {{note.description}} </p>
-                    <!-- <p v-text="note._id"></p> -->
+                    <!-- <p v-text="note.userid"></p>
+                    <p>{{note.isarchieved}}</p> -->
                 </div>
                 <div class="toggle_btn_notes">
                     <button class="reminder_btn">
@@ -18,11 +41,11 @@
                         <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="18px" viewBox="0 0 24 24" width="18px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g>
                         <path d="M20,9V6h-2v3h-3v2h3v3h2v-3h3V9H20z M9,12c2.21,0,4-1.79,4-4c0-2.21-1.79-4-4-4S5,5.79,5,8C5,10.21,6.79,12,9,12z M9,6 c1.1,0,2,0.9,2,2c0,1.1-0.9,2-2,2S7,9.1,7,8C7,6.9,7.9,6,9,6z M15.39,14.56C13.71,13.7,11.53,13,9,13c-2.53,0-4.71,0.7-6.39,1.56 C1.61,15.07,1,16.1,1,17.22V20h16v-2.78C17,16.1,16.39,15.07,15.39,14.56z M15,18H3v-0.78c0-0.38,0.2-0.72,0.52-0.88 C4.71,15.73,6.63,15,9,15c2.37,0,4.29,0.73,5.48,1.34C14.8,16.5,15,16.84,15,17.22V18z"/></g></svg>
                     </button>
-                    <button @click="archive_note_btn(note)" class="archieve_btn">
+                    <button @click="unarchive_btn(note)" class="unarchieve_btn">
                         <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/>
-                        <path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM6.24 5h11.52l.81.97H5.44l.8-.97zM5 19V8h14v11H5zm8.45-9h-2.9v3H8l4 4 4-4h-2.55z"/></svg>
+                        <path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM6.24 5h11.52l.83 1H5.42l.82-1zM5 19V8h14v11H5zm3-5h2.55v3h2.9v-3H16l-4-4z"/></svg>
                     </button>
-                    <button @click="delete_note_btn(note._id)" class="delete_btn">
+                    <button class="delete_btn">
                         <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="#000000">
                         <path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7z"/></svg>
                     </button>
@@ -46,14 +69,18 @@
             </div>
         </div>
     </div>
+            </div>
+    </div> 
+</div>
 </template>
 
+<script type="module" src='./Displayarchive.js'></script>
 
 
-<script type="module" src="./Display.js">
+<style lang="scss">
 
-</script>
 
-<style lang="scss" scoped>
-
+@import './Displayarchive.scss';
+@import '../Dashboard/Dashboard.scss';
+@import '../../components/Displaynotes/Displaynotes.scss';
 </style>
