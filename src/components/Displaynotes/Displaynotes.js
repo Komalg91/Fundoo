@@ -8,28 +8,28 @@ export default {
             expand_box: false,
             color_array:[
                 {
-                    color: "#b6c912"
+                    color: "#f28b82"
                 },
                 {
-                    color: "#ca7a12"
+                    color: "#fbbc04"
                 },
                 {
-                    color: "#12aeca"
+                    color: "#fff475"
                 },
                 {
-                    color: "#b972e7"
+                    color: "#ccff90"
                 },
                 {
-                    color: "#b6c912"
+                    color: "#a7ffeb"
                 },
                 {
-                    color: "#ca7a12"
+                    color: "#aecbfa"
                 },
                 {
-                    color: "#12aeca"
+                    color: "#fdcfe8"
                 },
                 {
-                    color: "#b972e7"
+                    color: "#e6c9a8"
                 },
             ],
             bgc:{

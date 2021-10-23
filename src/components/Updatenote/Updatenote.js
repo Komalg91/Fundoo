@@ -11,7 +11,7 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["add_notes"]),
+        ...mapActions(["update_notes"]),
         // toggle_note(){
         //     // document.querySelector('.title_class').style.display = "unset";
         //     document.querySelector('.toggle_btn').style.display = "flex";
@@ -28,7 +28,7 @@ export default {
                 description: this.description
             }
 
-            this.add_notes(notes_add);
+            this.update_notes(notes_add);
 
             
 

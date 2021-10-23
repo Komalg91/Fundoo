@@ -9,6 +9,13 @@ export default class noteService{
         return axios.post('http://localhost:3000/persons/notes/addnotes', notes_add, {headers});
     }
 
+    updatenotes(notes_add, headers) {
+        // const id = note._id;
+        // console.log("noteservices", headers);
+        // console.log(note);
+        return axios.patch('http://localhost:3000/persons/notes/addnotes', notes_add, {headers});
+    }
+
     archivenotes(headers, note){
         const id = note._id;
         console.log("noteservices", headers);

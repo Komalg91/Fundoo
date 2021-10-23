@@ -1,11 +1,11 @@
 <template>
     <div class="display_container">
         <div class="display_notes_content">
-            <div class="display_notes" v-for="note in allNotes.slice().reverse()" :key="note._id" v-bind:style="mystyle" @click="expand_box = !expand_box">
-                <div class="display_title">
+            <div class="display_notes" v-for="note in allNotes.slice().reverse()" :key="note._id" v-bind:style="mystyle">
+                <div class="display_title" @click="expand_box = !expand_box">
                     <p> {{note.title}} </p>
                 </div>
-                <div class="display_description">
+                <div class="display_description" @click="expand_box = !expand_box">
                     <p> {{note.description}} </p>
                     <!-- <p v-text="note.isarchieved"></p>
                     <p v-text="note.userid"></p> -->

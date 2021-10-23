@@ -41,6 +41,21 @@ const actions = {
                 }).catch(() => console.log("Error"));
         },
 
+        async update_notes({commit}, notes_add){
+            console.log(notes_add);
+            const token1 = JSON.parse(localStorage.getItem('Login'));
+            console.log("display notes", token1[0]._TKN)
+            const headers = {
+                'x-auth-token': token1[0]._TKN
+            }
+            await noteservice.addnotes(notes_add, headers).then( async ()  => {
+                await noteservice.getAllnotes(headers).then( response => {
+                    this.notes = response.data;
+                    commit('setnotes', response.data);
+                    }).catch(() => console.log("Error")); 
+                }).catch(() => console.log("Error"));
+        },
+
         async delete_note({commit}, note){
             const token1 = JSON.parse(localStorage.getItem('Login'));
             const headers = {
