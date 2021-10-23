@@ -15,6 +15,22 @@ html{
     margin: 0%;
     padding: 0%;
 }
+.userdetails{
+    background-color: aquamarine;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 50%;
+    height: 30%;
+    border-radius: 5px;
+    background-color: transparent;
+    z-index: 10001;
+    opacity: 1;
+    transition: .6s;      
+}
 
 //top navbar
 .nav_header{
@@ -133,11 +149,15 @@ input[type=search]{
 }
 .section4{
     margin-left: 5%;
+    display: flex;
 }
-
-.section4{
+.section4 svg{
     width: 48px;
 }
+
+// .section4{
+//     width: 48px;
+// }
 input[type=search]:focus{
     border: none;
     outline: none;
@@ -147,7 +167,9 @@ input[type=search]:focus{
     background-color: #FFFFFF;
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
 }
-
+.user_icon{
+    cursor: pointer;
+}
 
 @media screen and (max-width: 600px) {
     .search_box{

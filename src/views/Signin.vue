@@ -107,19 +107,16 @@ export default {
 
 
 
-              axios.post('http://localhost:3000/persons/loginPersons', fundooperson).then((resp) => {
-                  let logindata={}
-                  var loginData = JSON.parse(localStorage.getItem("Login"));
-                  console.log("login Success");
-                  console.log("login", resp.data.token);
-                    logindata._TKN = resp.data.token
-                    loginData =[logindata]
-                  localStorage.setItem("Login", JSON.stringify(loginData));
-                     this.$router.push('/dashboard');
-                  
-
-                
-                  }).catch(() => console.log(" login Error"));
+            axios.post('http://localhost:3000/persons/loginPersons', fundooperson).then((resp) => {
+                let logindata={}
+                var loginData = JSON.parse(localStorage.getItem("Login"));
+                console.log("login Success");
+                console.log("login", resp.data.token);
+                logindata._TKN = resp.data.token
+                loginData = [logindata]
+                localStorage.setItem("Login", JSON.stringify(loginData));
+                this.$router.push('/dashboard');    
+            }).catch(() => console.log(" login Error"));
             // this.$router.push('/loginPersons');
 
         //   console.log(this.v$);

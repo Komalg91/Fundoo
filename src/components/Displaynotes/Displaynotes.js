@@ -52,10 +52,15 @@ export default {
     //     }
     // },
     methods: {
-        ...mapActions(["get_notes","archive_note","delete_note","getarchive_note"]),
+        ...mapActions(["get_notes","archive_note","delete_note","getarchive_note","bgcolor_note"]),
         
-        changebg: function(bgcolor){
-            this.mystyle.backgroundColor = bgcolor
+        // changebg: function(bgcolor){
+        //     this.mystyle.backgroundColor = bgcolor
+        // },
+        changebg(color,note){
+            note.bgcolor = color;
+            console.log("note with bgcolor", note);
+            this.bgcolor_note(note);
         },
         delete_note_btn(note){
             this.delete_note(note);

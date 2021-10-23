@@ -5,16 +5,19 @@ const noteservice = new noteService();
 const state = {
     notes: [],
     archnotes: [],
-    delnotes: []
+    delnotes: [],
+    user: []
 }
 
 const getters = {
     allNotes: (state) => state.notes,
     getarchiveNotes: (state) => state.archnotes,
-    getdeleteNotes: (state) => state.delnotes
+    getdeleteNotes: (state) => state.delnotes,
+    getuserdetails: (state) => state.user
 }
 
 const actions = {
+    //Notes
         async get_notes({commit}){
             const token1 = JSON.parse(localStorage.getItem('Login'));
             console.log("display notes", token1[0]._TKN)
@@ -48,7 +51,7 @@ const actions = {
             const headers = {
                 'x-auth-token': token1[0]._TKN
             }
-            await noteservice.addnotes(notes_add, headers).then( async ()  => {
+            await noteservice.updatenotes(notes_add, headers).then( async ()  => {
                 await noteservice.getAllnotes(headers).then( response => {
                     this.notes = response.data;
                     commit('setnotes', response.data);
@@ -71,7 +74,7 @@ const actions = {
 
         async archive_note({commit}, note){
         const token1 = JSON.parse(localStorage.getItem('Login'));
-        console.log("display notes", token1[0]._TKN)
+        console.log("archive notes", token1[0]._TKN)
         const headers = {
               'x-auth-token': token1[0]._TKN
           }
@@ -87,6 +90,20 @@ const actions = {
             }).catch(() => console.log("Error"));
         
         console.log(this.notes);
+    },
+
+    async bgcolor_note({commit}, note){
+        const token1 = JSON.parse(localStorage.getItem('Login'));
+        console.log("archive notes", token1[0]._TKN)
+        const headers = {
+            'x-auth-token': token1[0]._TKN
+        }
+        await noteservice.updatebgcolor(headers, note).then(async ()  => {
+            await noteservice.getAllnotes(headers).then( response => {
+                // this.notes = response.data;
+                commit('setnotes', response.data);
+                }).catch(() => console.log("Error")); 
+            }).catch(() => console.log("Error"));
     },
 
     async getarchive_note({commit}){
@@ -133,14 +150,28 @@ const actions = {
             commit('setdeletenotes', response.data)
             console.log(response.data);}
         ).catch(() => console.log("Error"));
-    }
+    },
+
+    //Users
+    async get_user({commit}){
+        const token1 = JSON.parse(localStorage.getItem('Login'));
+        console.log("display notes", token1[0]._TKN)
+        const headers = {
+            'x-auth-token': token1[0]._TKN
+        }
+        await noteservice.getuser(headers).then( response => {
+            console.log(response.data, typeof(response.data))
+                commit('setuser', response.data);
+            }).catch(() => console.log("Error"));         
+        },
 
 }
 
 const mutations = {
     setnotes: (state, notes) => (state.notes = notes),
     setarchivenotes: (state, notes2) => (state.archnotes = notes2),
-    setdeletenotes: (state, notesdel) => (state.delnotes = notesdel)
+    setdeletenotes: (state, notesdel) => (state.delnotes = notesdel),
+    setuser: (state, userdetails) => (state.user = userdetails)
     // setarchivenotes: (state, ) => (state.notes = state.notes.filter(note => note.userid !== userid))
 }
 

@@ -1,9 +1,9 @@
 <template>
     <div class="display_container">
         <div class="display_notes_content">
-            <div class="display_notes" v-for="note in allNotes.slice().reverse()" :key="note._id" v-bind:style="mystyle">
+            <div class="display_notes" v-for="note in allNotes.slice().reverse()" :key="note._id" v-bind:style="{backgroundColor: note.bgcolor}">
                 <div class="display_title" @click="expand_box = !expand_box">
-                    <p> {{note.title}} </p>
+                    <p> {{note.title}} {{note.bgcolor}}</p>
                 </div>
                 <div class="display_description" @click="expand_box = !expand_box">
                     <p> {{note.description}} </p>
@@ -33,7 +33,7 @@
                         <div class="dropmenu">
                             <div v-for="item in color_array" :key="item">
                                 
-                                <button :style="{backgroundColor: item.color}"  @click="changebg(item.color, note._id)"></button>
+                                <button :style="{backgroundColor: item.color}"  @click="changebg(item.color, note)"></button>
                             </div>
                             <!--mystyle.backgroundColor = $event.target.item 
                                 <span @click="greencolor(note)" :style="mystyle2"></span>

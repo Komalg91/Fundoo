@@ -8,4 +8,5 @@ export default {
     components: {
         Sidebar, Takenote, Navheader, Displaynotes
     }
+    
 }
