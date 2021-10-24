@@ -1,33 +1,15 @@
 import { mapActions, mapGetters } from 'vuex';
 import Sidebar from '../../components/Sidebar/Sidebar.vue';
 import Navheader from '../../components/Navheader/Navheader.vue';
+import Notebuttons from '../../components/Notebuttons/Notebuttons.vue';
 
 
 
 export default {
-    data(){
-        return{
-            mystyle: {
-                backgroundColor: "#777",
-                height: "20px",
-                width: "20px"
-            },
-            mystyle2:{
-                 backgroundColor: "#b6c912",
-                 height: "20px",
-                 width: "20px"
-            }
-        }
-    },
     name: 'Displaydel',
     components: {
-        Sidebar, Navheader
+        Sidebar, Navheader, Notebuttons
     },
-    // data(){
-    //     return {
-    //         notes: []
-    //     }
-    // },
     methods: {
         ...mapActions(["getdel_note","delete_note"]),
 

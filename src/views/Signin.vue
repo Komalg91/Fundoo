@@ -32,7 +32,7 @@
                 </div>
                 <div class="row3">
                     <div class="row_item">
-                        <input v-model="state.password" type="text" name="password" id="password" class="inputfield" required=''>
+                        <input v-model="state.password" type="password" name="password" id="password" class="inputfield" required=''>
                         <label for="password" alt='Password' placeholder='Password' class="placeholder"></label>
                     </div>
                     <div class="error" v-if="v$.password.$error"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">

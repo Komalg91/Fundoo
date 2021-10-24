@@ -135,6 +135,10 @@ input[type=text]{
     border: 2px solid red;
     border-radius: 4px;
 }
+input[type=password]{
+    border: 2px solid red;
+    border-radius: 4px;
+}
 
 // span[placeholder] {
 //     color: aquamarine;
@@ -194,7 +198,7 @@ a{
 }
 
 
-input[type="text"] {
+input[type="text"], input[type="password"] {
     box-sizing: border-box;
     width: 100%;
     height: calc(3em + 2px);
@@ -206,14 +210,16 @@ input[type="text"] {
     resize: none;
     outline: none;
   }
-  input[type="text"][required]:focus {
+  input[type="text"][required]:focus, input[type="password"][required]:focus {
     border: 2px solid #1a73e8;
   }
-  input[type="text"][required]:focus + label[placeholder]:before {
+  input[type="text"][required]:focus + label[placeholder]:before, input[type="password"][required]:focus + label[placeholder]:before {
     color: #1a73e8;
   }
   input[type="text"][required]:focus + label[placeholder]:before,
-  input[type="text"][required]:valid + label[placeholder]:before {
+  input[type="text"][required]:valid + label[placeholder]:before,
+  input[type="password"][required]:focus + label[placeholder]:before,
+  input[type="password"][required]:valid + label[placeholder]:before {
     transition-duration: 0.2s;
     transform: translate(0, -1.6em) scale(0.9, 0.9);
     background-color: #FFFFFF;
@@ -221,18 +227,18 @@ input[type="text"] {
     margin: 0 0;
     font-size: 0.8rem;
   }
-  input[type="text"][required]:invalid + label[placeholder][alt]:before {
+  input[type="text"][required]:invalid + label[placeholder][alt]:before, input[type="password"][required]:invalid + label[placeholder][alt]:before {
     content: attr(alt);
   }
   
-  input[type="text"][required] + label[placeholder] {
+  input[type="text"][required] + label[placeholder],  input[type="password"][required] + label[placeholder] {
     display: block;
     pointer-events: none;
     line-height: 1.25em;
     margin-top: calc(-2em);
     margin-bottom: calc((0.9em));
   }
-  input[type="text"][required] + label[placeholder]:before {
+  input[type="text"][required] + label[placeholder]:before, input[type="password"][required] + label[placeholder]:before {
     content: attr(placeholder);
     display: inline-block;
     margin: 0 calc(1em + 2px);

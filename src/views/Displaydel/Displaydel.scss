@@ -49,14 +49,14 @@ width: 35px;
 color: #202124;
 border-radius: 50%;
 }
-button:hover{
+.toggle_btn_notes button:hover{
 background-color: rgba(95,99,104,0.157);
 border-radius: 50%;
 }
 .display_notes:hover {
-.toggle_btn_notes{
-    display: flex;
-}
+    .toggle_btn_notes{
+        display: flex;
+    }
 }
 .color_btn button{
 outline: none;

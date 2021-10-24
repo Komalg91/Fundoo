@@ -8,6 +8,9 @@ export default {
             expand_box: false,
             color_array:[
                 {
+                    color: "#ffffff"
+                },
+                {
                     color: "#f28b82"
                 },
                 {
@@ -23,7 +26,13 @@ export default {
                     color: "#a7ffeb"
                 },
                 {
+                    color: "#cbf0f8"
+                },
+                {
                     color: "#aecbfa"
+                },
+                {
+                    color: "#d7aefb"
                 },
                 {
                     color: "#fdcfe8"
@@ -31,6 +40,9 @@ export default {
                 {
                     color: "#e6c9a8"
                 },
+                {
+                    color: "#e8eaed"
+                }
             ],
             bgc:{
                 backgroundColor: ''

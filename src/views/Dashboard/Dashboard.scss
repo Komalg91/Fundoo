@@ -30,57 +30,7 @@ body{
     padding: 2% 1%;
 }
 
-.side_nav_header{
-    margin: 0;   
-}
-.sidebar{
-    // display: flex;
-    width: auto;
-}
 
-.sidebar_row{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    z-index: 10;
-    // justify-content: space-evenly;
-    // width: 280px;
-    // min-height: auto;
-    height: calc(100% - 80px);
-    position: fixed;
-    top: 80px;
-}
-.sidebar_row_left{
-    flex: 1 0 auto;
-    color: #202124;
-    font-weight: 600;
-    font-family: 'Open Sans', sans-serif;
-}
-.sidebar_row_right{
-    margin-bottom: 1rem;
-    padding: 0 3rem;
-}
-
-.sidebar_row{
-    width: 80px;
-}
-.sidebar_row_right span{
-    display: none;
-}
-
-.row_right_text{
-    font-size: 0.8rem;
-    color: #5f6368;
-}
-.sidebar_row:hover{
-    width: 280px;
-    background-color: #FFFFFF;
-    box-shadow: 0 16px 10px 0 rgb(0 0 0 / 14%), 0 11px 18px 0 rgb(0 0 0 / 12%), 0 13px 5px -1px rgb(0 0 0 / 20%);;
-
-    .sidebar_row_right span{
-        display: unset;
-    }
-}
 
 .main_right_content{
     display: flex;

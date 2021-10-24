@@ -5,20 +5,11 @@
     <Navheader />
     <div class="maincontainer">
         <div class="main_left">
-            <div class="side_nav_header">
-                <div class="sidebar">
-                    <div class="sidebar_row">
-                        <div class="sidebar_row_left">
+            
 
                             <Sidebar />
                             
-                        </div>
-                        <div class="sidebar_row_right">
-                            <span class="row_right_text"> Open-source licences</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        
         </div>
 
         <div class="main_right">

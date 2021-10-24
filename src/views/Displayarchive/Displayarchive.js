@@ -1,6 +1,7 @@
 import { mapActions, mapGetters } from 'vuex';
 import Sidebar from '../../components/Sidebar/Sidebar.vue';
 import Navheader from '../../components/Navheader/Navheader.vue';
+import Notebuttons from '../../components/Notebuttons/Notebuttons.vue'
 
 
 export default {
@@ -20,7 +21,7 @@ export default {
     },
     name: 'Displaynotes',
     components: {
-        Sidebar, Navheader
+        Sidebar, Navheader, Notebuttons
     },
     // data(){
     //     return {
