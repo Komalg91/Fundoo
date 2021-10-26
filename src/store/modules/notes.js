@@ -45,7 +45,7 @@ const actions = {
         },
 
         async update_notes({commit}, notes_add){
-            console.log(notes_add);
+            console.log("notes", notes_add);
             const token1 = JSON.parse(localStorage.getItem('Login'));
             console.log("display notes", token1[0]._TKN)
             const headers = {
@@ -53,6 +53,7 @@ const actions = {
             }
             await noteservice.updatenotes(notes_add, headers).then( async ()  => {
                 await noteservice.getAllnotes(headers).then( response => {
+                    console.log("res", response.data);
                     this.notes = response.data;
                     commit('setnotes', response.data);
                     }).catch(() => console.log("Error")); 
@@ -106,6 +107,19 @@ const actions = {
             }).catch(() => console.log("Error"));
     },
 
+    async deleteforever_note({commit}, note){
+        const token1 = JSON.parse(localStorage.getItem('Login'));
+        console.log("archive notes", token1[0]._TKN)
+        const headers = {
+            'x-auth-token': token1[0]._TKN
+        }
+        await noteservice.deleteforevernotes(headers, note).then((response) => {
+            console.log("deleted note");
+            commit('setdeleteforevernotes', note._id)
+            console.log(response.data);
+        }).catch(() => console.log("Error"));
+    },
+
     async getarchive_note({commit}){
         const token1 = JSON.parse(localStorage.getItem('Login'));
         console.log("get archive", token1[0]._TKN)
@@ -135,18 +149,8 @@ const actions = {
         const headers = {
               'x-auth-token': token1[0]._TKN
           }
-        //   console.log("get archive store", note.userid);
         await noteservice.getdeletenotes(headers).then( 
-            // async ()  => {
-        //     await noteservice.getAllnotes().then( response => {
-        //         this.notes = response.data;
-        //         commit('setnotes', response.data);
-        //         }).catch(() => console.log("Error")); 
-        //     }
             (response) =>{
-            // console.log("success", note._id);
-            // this.archnotes = response.data;
-            // const userid = note.userid;
             commit('setdeletenotes', response.data)
             console.log(response.data);}
         ).catch(() => console.log("Error"));
@@ -171,7 +175,9 @@ const mutations = {
     setnotes: (state, notes) => (state.notes = notes),
     setarchivenotes: (state, notes2) => (state.archnotes = notes2),
     setdeletenotes: (state, notesdel) => (state.delnotes = notesdel),
-    setuser: (state, userdetails) => (state.user = userdetails)
+    setuser: (state, userdetails) => (state.user = userdetails),
+    setdeleteforevernotes: (state, id) => (state.delnotes = state.delnotes.filter(temp => temp.id!== id))
+
     // setarchivenotes: (state, ) => (state.notes = state.notes.filter(note => note.userid !== userid))
 }
 

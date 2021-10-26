@@ -18,7 +18,6 @@ html{
     padding: 0%;
 }
 
-
 //top navbar
 .nav_header{
     margin: 0;
@@ -30,6 +29,17 @@ html{
     align-items: center;
 }
 
+.nav_header svg{
+    fill: #5f6368;
+    opacity: 0.8;
+}
+.nav_icons:hover{
+    cursor: pointer;
+}
+.nav_icons svg:hover{
+    fill: #202124;
+    opacity: 1;
+}
 .navbar{
     display: flex;
     flex-direction: row;
@@ -61,6 +71,7 @@ html{
 .section1_item1{
     padding: 12px;
     margin: 0 3px;
+    cursor: pointer;
 }
 .section1_item2{
     display: flex;
@@ -122,6 +133,9 @@ form{
     float: left;
     position: absolute;
     padding: 12px;
+}
+.search_btn svg{
+    width: 48px;
 }
 .search_box{
  margin: 0 48px;
@@ -215,6 +229,10 @@ input[type=search]:focus{
 .user_box2_item{
     margin: 5%;
 }
+.user_box2_item button:hover{
+    cursor: pointer;
+    
+}
 .user_box2 button{
     background-color: #FFFFFF;
     border: 1px solid #dadce0;
@@ -255,18 +273,37 @@ input[type=search]:focus{
     font-family: 'Roboto', sans-serif;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 792px) {
     .search_box{
         display: none;
     }
     .search{
         background-color: transparent;
     }
+}
 
-    .nav_header svg{
-        height: 18px;
-        width: 18px;
+@media screen and (max-width: 1018px) {
+    .section4{
+        margin-left: unset;
     }
+}
+
+@media screen and (max-width: 600px) {
+    .search_box{
+        display: none;
+    }
+    .search{
+        background-color: transparent;
+        padding: unset;
+        justify-content: flex-end;
+    }
+    .search_btn{
+        padding: unset;
+    }
+    // .nav_header svg{
+    //     height: 18px;
+    //     width: 18px;
+    // }
     .keep_text{
         font-size: 1rem;
     }
@@ -274,23 +311,73 @@ input[type=search]:focus{
         height: 30px;
         width: 30px;
     }
+    .list_view{
+        display: none;
+    }
 
 }
 
 
 @media screen and (max-width: 400px) {
-    .section3_item2 svg{
-        width: 20px;
+    .section1_item1{
+        padding: 8px;
+        width: unset;
+        margin: unset;
+    }
+    .section3_item2 svg, .section1_item1 svg{
+        width: 24px;
+    }
+    .section4 svg, .search_btn svg{
+        width: 24px;
+        
+    }
+    .section4 .apps_icon, .section4 .user_icon, .settings, .refresh{
+        padding: 8px;
     }
     .search_btn{
         padding: unset;
+        position: unset;
     }
     .section1_item2 img{
         height: 30px;
         width: 30px;
     }
+    .section1{
+        padding-right: 2%;
+    }
+
+}
+
+@media screen and (max-width: 290px) {
     .section1_item1{
-        width: unset;
+        padding: 5px;
+    }
+    .section4 .apps_icon, .section4 .user_icon, .settings, .refresh{
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .section1_item1{
+        padding: 5px;
+
+    }
+    .section3_item2 svg, .section1_item1 svg{
+        width: 18px;
+    }
+    .section4 svg, .search_btn svg{
+        width: 18px;
+        
+    }
+    .section4 .apps_icon, .section4 .user_icon, .settings, .refresh{
+        padding: 5px;
+    }
+    .section1_item2 img{
+        height: 25px;
+        width: 25px;
+    }
+    .keep_text{
+        font-size: 0.9rem;
     }
 
 }

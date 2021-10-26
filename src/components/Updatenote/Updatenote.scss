@@ -145,36 +145,8 @@ input[type=text]{
     height: 40px;
     margin: 0 8px;
 }
-.dropmenu span{
-    outline: none;
-    border: none;
-    // background-color: transparent;
-    // top: 50%;
-    // height: unset;
-    color: #202124;
-    border-radius: 50%;
-    margin-bottom: 5px;
-    }
-.dropmenu{
-    display: none;
-    flex-direction: column;
-    text-align: left;
-    box-shadow: 1px 2px 2px 0px rgb(65 69 73 / 10%), 1px 3px 3px 1px rgb(65 69 73 / 15%) ;
-    padding: 12px;
-    border-radius: 2px;
-    bottom: 50%;
-    left: 30%;
-    width: 100px;
-    height: 70px;
-    background-color: #FFFFFF;
-    z-index: 10;
-    position: absolute;
-}
-.more_btn:hover{
-    .dropmenu{
-        display: flex;
-    }
-}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .row_right_text{
@@ -197,6 +169,48 @@ input[type=text]{
     // height: 40px;
     margin: 0 8px;
     padding: 10px 24px;
+}
+
+.color_btn{
+    position: relative;
+}
+.dropmenu button{
+outline: none;
+border: none;
+width: 30px;
+height: 30px;
+// background-color: transparent;
+// top: 50%;
+// height: unset;
+color: #202124;
+border-radius: 50% !important; 
+margin: 2px;
+border: 2px solid #f7f5f5;
+}
+
+.dropmenu{
+    display: none;
+    box-shadow: 1px 2px 2px 0px rgb(65 69 73 / 10%), 1px 3px 3px 1px rgb(65 69 73 / 15%) ;
+    padding: 8px;
+    border-radius: 2px;
+    bottom: 100%;
+    left: 5%;
+    width: 155px;
+    height: 120px;
+    background-color: #FFFFFF;
+    z-index: 10;
+    position: absolute;
+}
+.more_btn:hover{
+    .dropmenu{
+        display: flex;
+    }
+}
+.color_btn:hover{
+    .dropmenu{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 @media screen and (max-width:930px) {

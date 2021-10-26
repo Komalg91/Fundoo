@@ -5,10 +5,10 @@
                 <div class="display_title" @click="expand_box = !expand_box">
                     <p> {{note.title}} {{note.bgcolor}}</p>
                 </div>
-                <div class="display_description" @click="expand_box = !expand_box">
+                <div class="display_description">
                     <p> {{note.description}} </p>
-                    <!-- <p v-text="note.isarchieved"></p>
-                    <p v-text="note.userid"></p> -->
+                    <!-- <p v-text="note.isarchieved"></p> -->
+                    <p v-text="note._id"></p>
 
                 </div>
                 <div class="toggle_btn_notes">
@@ -52,15 +52,17 @@
                             <span>Delete note</span>
                             <span>Add label</span>
                         </div> -->
+                        <div class="c-modal" v-show="expand_box" >
+                            <Updatenote v-bind:notes="note" />
+                    
+                        </div>
                     </button>
                     
                 </div>
-            </div>
-
-            <div class="c-modal" v-show="expand_box" >
-                <Updatenote />
+                
                 
             </div>
+
             <div class="bg" v-show="expand_box" @click="expand_box = !expand_box"></div>
         </div> 
     </div>
@@ -70,4 +72,5 @@
 
 <style lang="scss" scoped>
 @import './Displaynotes.scss';
+// @import '../Updatenote/Updatenote.scss'
 </style>

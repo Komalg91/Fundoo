@@ -33,7 +33,7 @@
                             <p>{{note.isdeleted}}</p> -->
                         </div>
 
-                        <Notebuttons v-bind:note="note" />
+                        <Notebuttonsdel v-bind:note="note" />
 
                     </div>
                 </div>

@@ -64,7 +64,7 @@ export default {
     //     }
     // },
     methods: {
-        ...mapActions(["get_notes","archive_note","delete_note","getarchive_note","bgcolor_note"]),
+        ...mapActions(["get_notes","archive_note","delete_note","getarchive_note","bgcolor_note","update_notes"]),
         
         // changebg: function(bgcolor){
         //     this.mystyle.backgroundColor = bgcolor
@@ -98,6 +98,13 @@ export default {
             this.getarchive_note(note);
         },
 
+        // update_note(note){
+        //     console.log("displaynotes", note);
+        //     note.title =  this.title,
+        //     note.description = this.description
+        //     console.log("displaynotes2", note);
+        //     this.update_notes(note)
+        // },
         redcolor(note){
             note.bgcolor = "#777";
             console.log(note.bgcolor);
@@ -111,7 +118,12 @@ export default {
     // },
     computed: mapGetters(["allNotes","getarchiveNotes"])
     
+    // let notes_add = {
+    //     title: this.title,
+    //     description: this.description
+    // }
 
+    // this.update_notes(notes_add);
     //     noteservice.getAl.then(
     //         response => {
     //             this.notes = response.data;

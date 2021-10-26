@@ -3,14 +3,16 @@ import { mapActions, mapGetters } from 'vuex';
 export default{
     data(){
         return{
-            showuser: false
+            showuser: false,
         }
     },
+
     computed: mapGetters(["getuserdetails"]),
     methods: {
         ...mapActions(["get_user"]),
         logout_user(){
             localStorage.removeItem('Login');
+            this.$router.push('./login');
         }
     },
     created(){

@@ -1,14 +1,14 @@
 import { mapActions, mapGetters } from 'vuex';
 import Sidebar from '../../components/Sidebar/Sidebar.vue';
 import Navheader from '../../components/Navheader/Navheader.vue';
-import Notebuttons from '../../components/Notebuttons/Notebuttons.vue';
+import Notebuttonsdel from '../../components/Notebuttonsdel/Notebuttonsdel.vue';
 
 
 
 export default {
     name: 'Displaydel',
     components: {
-        Sidebar, Navheader, Notebuttons
+        Sidebar, Navheader, Notebuttonsdel
     },
     methods: {
         ...mapActions(["getdel_note","delete_note"]),

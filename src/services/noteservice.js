@@ -9,11 +9,11 @@ export default class noteService{
         return axios.post('http://localhost:3000/persons/notes/addnotes', notes_add, {headers});
     }
 
-    updatenotes(notes_add, headers) {
-        // const id = note._id;
-        // console.log("noteservices", headers);
-        // console.log(note);
-        return axios.patch('http://localhost:3000/persons/notes/updateNoteContent', notes_add, {headers});
+    updatenotes(note, headers) {
+        const id = note._id;
+        console.log("noteservices update note", headers);
+        console.log("service",note);
+        return axios.patch(`http://localhost:3000/persons/notes/updateNoteContent/${id}`, note, {headers});
     }
 
     archivenotes(headers, note){
@@ -28,6 +28,11 @@ export default class noteService{
         console.log("noteservices", headers);
         console.log(note);
         return axios.patch(`http://localhost:3000/persons/notes/updateNotedel/${id}`, note, {headers});
+    }
+
+    deleteforevernotes(headers, note){
+        const id = note._id;
+        return axios.delete(`http://localhost:3000/persons/notes/deleteIdNote/${id}`, {headers});
     }
 
     updatebgcolor(headers, note){
